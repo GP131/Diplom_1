@@ -10,7 +10,7 @@ from praktikum.database import Database
 @allure.feature("Burger")
 class TestBurger:
 
-    @allure.story("Установка булочек")
+    @allure.title("Установка булочек")
     def test_set_buns(self):
         with allure.step("Создаем бургер и булочку"):
             burger = Burger()
@@ -20,7 +20,7 @@ class TestBurger:
         with allure.step("Проверяем, что булочка установлена корректно"):
             assert burger.bun == bun
 
-    @allure.story("Добавление ингредиента")
+    @allure.title("Добавление ингредиента")
     def test_add_ingredient(self):
         with allure.step("Создаем бургер и мок-объект ингредиента"):
             burger = Burger()
@@ -35,7 +35,7 @@ class TestBurger:
             assert burger.ingredients[0].get_name() == 'Type_bun'
             assert burger.ingredients[0].get_type() == praktikum.ingredient_types.INGREDIENT_TYPE_FILLING
 
-    @allure.story("Удаление ингредиента")
+    @allure.title("Удаление ингредиента")
     def test_remove_ingredient(self):
         with allure.step("Создаем бургер и мок-ингредиент"):
             burger = Burger()
@@ -46,7 +46,7 @@ class TestBurger:
         with allure.step("Проверяем, что ингредиентов в бургере не осталось"):
             assert len(burger.ingredients) == 0
 
-    @allure.story("Перемещение ингредиента")
+    @allure.title("Перемещение ингредиента")
     def test_move_ingredient(self):
         with allure.step("Создаем бургер и добавляем два ингредиента"):
             burger = Burger()
@@ -60,7 +60,7 @@ class TestBurger:
             assert burger.ingredients[0] == mock_ingredient2
             assert burger.ingredients[1] == mock_ingredient1
 
-    @allure.story("Получение цены бургера")
+    @allure.title("Получение цены бургера")
     def test_get_price(self):
         with allure.step("Создаем бургер и получаем данные из базы"):
             burger = Burger()
@@ -71,7 +71,7 @@ class TestBurger:
         with allure.step("Проверяем, что цена бургера рассчитана верно"):
             assert burger.get_price() == 400.0
 
-    @allure.story("Получение чека бургера")
+    @allure.title("Получение чека бургера")
     def test_get_receipt(self):
         with allure.step("Создаем бургер и добавляем ингредиенты"):
             burger = Burger()

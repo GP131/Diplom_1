@@ -7,13 +7,11 @@ from praktikum.ingredient import Ingredient
 @allure.feature("Ingredient Types")
 class TestIngredientTypes:
 
-    @allure.story("Проверка значений типов ингредиентов")
     @allure.title("Проверка, что значения типов ингредиентов заданы корректно")
     def test_ingredient_type_values(self):
         assert INGREDIENT_TYPE_SAUCE == "SAUCE"
         assert INGREDIENT_TYPE_FILLING == "FILLING"
 
-    @allure.story("Проверка использования типов ингредиентов")
     @allure.title("Создание ингредиентов с разными типами")
     def test_ingredient_creation_with_types(self):
         sauce = Ingredient(INGREDIENT_TYPE_SAUCE, "hot sauce", 100)

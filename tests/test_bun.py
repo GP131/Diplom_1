@@ -6,7 +6,7 @@ from praktikum.bun import Bun
 @allure.feature("Bun")
 class TestBun:
 
-    @allure.story("Получение наименования булочки")
+    @allure.title("Получение наименования булочки")
     @pytest.mark.parametrize("name, price", [
         ("black bun", 100),
         ("white bun", 200),
@@ -18,7 +18,7 @@ class TestBun:
         with allure.step(f"Проверяем, что имя булочки равно '{name}'"):
             assert bun.get_name() == name
 
-    @allure.story("Получение цены булочки")
+    @allure.title("Получение цены булочки")
     @pytest.mark.parametrize("name, price", [
         ("black bun", 100),
         ("white bun", 200),

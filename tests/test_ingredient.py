@@ -9,14 +9,12 @@ from praktikum.database import Database
 @allure.feature("Ingredient")
 class TestIngredient:
 
-    @allure.story("Проверка цены ингредиента")
     @allure.title("Проверка, что цена ингредиента устанавливается корректно")
     def test_get_price_correct_price(self):
         database = Database()
         ingredient = database.available_ingredients()[0]  # Берем первый ингредиент
         assert ingredient.get_price() == 100
 
-    @allure.story("Проверка имени ингредиента")
     @allure.title("Проверка, что имя ингредиента устанавливается корректно")
     def test_get_name_correct_name(self):
         database = Database()
@@ -27,7 +25,6 @@ class TestIngredient:
         "ingredient_index",
         [0, 1, 2, 3, 4, 5]
     )
-    @allure.story("Проверка типа ингредиента")
     @allure.title("Проверка, что тип ингредиента корректно определяется для {ingredient_index}-го ингредиента")
     def test_get_type_correct_type(self, ingredient_index):
         database = Database()
